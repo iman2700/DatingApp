@@ -17,14 +17,14 @@ namespace DatingApp.API.Controllers
     {
         _context=context;
     }
-    [AllowAnonymous]
+    
         [HttpGet("{id}")]
         public async Task<IActionResult> getValue(int id)
         {
            var redult=await _context.Values.FirstOrDefaultAsync(x=>x.Id==id);
            return Ok(redult);
         }
-
+[AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> getValue()
         {

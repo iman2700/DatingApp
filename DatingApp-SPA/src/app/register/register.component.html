@@ -1,0 +1,21 @@
+ 
+<form>
+  <div class="form-group">
+    <label for="formGroupExampleInput">User Name</label>
+    <input type="text" class="form-control"  name="userName" [(ngModel)]="model.userName" placeholder="User input">
+  </div>
+  <div class="formg-group">
+    <label for="favouritValue">What is Yuor Favourit Value</label>
+    <select class="form-control">
+      <option  *ngFor="let value of valuesFromHome" [value]="value">{{value.name}}</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Password</label>
+    <input type="text" class="form-control"   name="password" [(ngModel)]="model.password" placeholder="Password input">
+  </div>
+  <div class="form-group">
+  <input type="button" class="form-control" (click)="register()" value="Register" >
+  <input type="button" class="form-control" (click)="cancel()" value="Cancel">
+</div>
+</form>

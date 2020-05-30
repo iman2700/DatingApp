@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md navbar-dark   bg-dark">
+  <a class="navbar-brand" href="#">Iman bar</a>
+     <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#"   >Messages</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+    <div *ngIf="loggedIn()" class="dropdown">
+      <button class="btn dropdown-toggle text-light">
+        Wellcom User
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#"><i class="fa fa-user"> Edit Porfile</i></a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fa fa-sihn-out"></i> Logout</a>
+      </div>
+    </div>
+    <form *ngIf="!loggedIn()" #logingForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit)="login()">
+      <input class="form-control mr-sm-2" type="text" placeholder="User Name" required3 [(ngModel)]="model.UserName" name="UserName">
+      <input class="form-control mr-sm-2" type="password" placeholder="Password" name="Password" [(ngModel)]="model.Password" >
+      <button [disabled]="!logingForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+    </form>
+ </nav>
