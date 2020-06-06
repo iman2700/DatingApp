@@ -1,0 +1,17 @@
+alexiv.vscode-angular2-files
+Angular.ng-template
+CoenraadS.bracket-pair-colorizer-2
+esbenp.prettier-vscode
+felixfbecker.php-debug
+formulahendry.auto-rename-tag
+Fudge.auto-using
+infinity1207.angular2-switcher
+jchannon.csharpextensions
+jmrog.vscode-nuget-package-manager
+johnpapa.Angular2
+ms-dotnettools.csharp
+ms-python.python
+ms-vscode.vscode-typescript-tslint-plugin
+msjsdiag.debugger-for-chrome
+PKief.material-icon-theme
+RafisTatar.addlocalnetreferences

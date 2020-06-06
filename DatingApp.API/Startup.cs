@@ -1,3 +1,8 @@
+using System.Net;
+using System.ComponentModel.Design.Serialization;
+using System.Collections.Immutable;
+using System.Net.Mime;
+using System.Threading;
 using System.Text;
 using System;
 using System.Collections.Generic;
@@ -52,6 +57,18 @@ namespace DatingApp.API
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler();
+                builder.Run(async context=>{
+                    context.Response.StatusCode=(int)HttpStatusCode.InteranlServerError;
+                      var error=context.Features.Get<IExceptionHandlerFeature>();
+                      if(error!=null)
+                      {
+                          await context.Response.WriteAsync(error);
+                      }
+                })
+            }
 
             // app.UseHttpsRedirection();
 
@@ -64,6 +81,7 @@ namespace DatingApp.API
             {
                 endpoints.MapControllers();
             });
+          
         }
     }
 }
