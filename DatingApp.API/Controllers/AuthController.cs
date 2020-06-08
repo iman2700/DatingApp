@@ -8,9 +8,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
- 
 using System.Text;
- using System.Configuration;
+using System.Configuration;
 using Microsoft.AspNetCore.Authorization;
 
 namespace DatingApp.API.Controllers
@@ -51,7 +50,8 @@ namespace DatingApp.API.Controllers
 
         [HttpPost("login")]
         public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
-        {
+        { 
+            //  throw new Exception("moshkel login");
            var userLogin=await _repo.Login(userForLoginDto.Username.ToLower(),userForLoginDto.Password);
            if(userLogin==null)
            {
